@@ -3,15 +3,38 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Bienvenido al panel de administración de Siete'n Taller</h1>
+
+    <div class="card">
+        <div class="card-body">
+            <h1 class="text-center">Bienvenido al panel de administración de Siete'n Taller</h1>
+        </div>
+    </div>
+
+
 @stop
 
 @section('content')
-    <p>Aquí podrás controlar y gestionar a los usuarios dados de alta en tu taller.</p>
-    <p>Esta aplicación ha sido creada por NubeMarketing exclusivamente para Siete'n Taller.</p>
+
+    <div class="mb-4">
+        <img src="{{ asset('imgs/banner.jpg') }}" alt=""
+            style="display: block; margin-left: auto; margin-right: auto; width: 50%; border-radius: 15px;" class="shadow p-3 mb-5 bg-white rounded">
+    </div>
+
+
+
+    {{-- <div class="card">
+        <div class="card-body">
+            <p>Aquí podrás controlar y gestionar a los usuarios dados de alta en tu taller.</p>
+            <p>Esta aplicación ha sido creada por NubeMarketing exclusivamente para Siete'n Taller.</p>
+        </div>
+    </div> --}}
 
     <div class="container">
+        <h2>Estadísticas generales</h2>
         <div class="row">
+
+
+
             <div class="col-md-4 col-xl-3">
                 <div class="card bg-c-blue order-card">
                     <div class="card-block">
@@ -25,7 +48,8 @@
                 <div class="card bg-c-green order-card">
                     <div class="card-block">
                         <h6 class="m-b-20">Presupuestos creados</h6>
-                        <h2 class="text-right"><i class="fa fa-money-bill f-left"></i><span>{{ $presupuestos->count() }}</span></h2>
+                        <h2 class="text-right"><i
+                                class="fa fa-money-bill f-left"></i><span>{{ $presupuestos->count() }}</span></h2>
                     </div>
                 </div>
             </div>
@@ -47,8 +71,38 @@
                     </div>
                 </div>
             </div>
+
         </div>
+
+        {{-- <div class="row align-items-start">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">An item</li>
+                    <li class="list-group-item">A second item</li>
+                    <li class="list-group-item">A third item</li>
+                </ul>
+            </div>
+        </div> --}}
     </div>
+
 @stop
 
 @section('css')

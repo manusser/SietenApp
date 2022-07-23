@@ -254,35 +254,44 @@ return [
             'label_color' => 'success',
         ],
         ['header' => 'Administración'],
-        [
+        /* [
             'text' => 'Facturación',
             'url'  => 'admin.facturacion.index',
             'icon' => 'fas fa-fw fa-file',
-        ],
-        [
+        ], */
+        /* [
             'text' => 'Presupuestos',
             'route'  => 'admin.presupuestos.index',
             'icon' => 'fa fa-fw fa-money-bill',
-        ],
-        [
+        ], */
+        /* [
             'text' => 'Citas',
             'url'  => 'admin.citas.index',
             'icon' => 'fa fa-fw fa-user-clock',
-        ],
-        [
-            'text' => 'Notificaciones',
-            'url'  => 'admin.citas.index',
-            'icon' => 'fa fa-fw fa-bell',
-        ],
+        ], */
         /* [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text' => 'Notificaciones',
+            'url'  => 'admin.notificaciones.index',
+            'icon' => 'fa fa-fw fa-bell',
+        ], */
+        /* [
+            'text' => 'Usuarios',
+            'url'  => 'admin.usuarios.index',
+            'icon' => 'fa fa-fw fa-user',
+        ], */
+        [
+            'text'    => 'Presupuestos',
+            'icon'    => 'fas fa-fw fa-money-bill',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Lista de presupuestos',
+                    'route'  => 'admin.presupuestos.index',
                 ],
                 [
+                    'text' => 'Crear presupuesto',
+                    'route'  => 'admin.presupuestos.create',
+                ],
+                /* [
                     'text'    => 'level_one',
                     'url'     => '#',
                     'submenu' => [
@@ -305,13 +314,167 @@ return [
                             ],
                         ],
                     ],
-                ],
+                ], */
+                
+            ],
+        ],
+        
+        [
+            'text'    => 'Facturación',
+            'icon'    => 'fas fa-fw fa-file',
+            'submenu' => [
                 [
-                    'text' => 'level_one',
+                    'text' => 'Lista de facturas',
                     'url'  => '#',
                 ],
+                [
+                    'text' => 'Crear factura',
+                    'url'  => '#',
+                ],
+                /* [
+                    'text'    => 'level_one',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'level_two',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'level_two',
+                            'url'     => '#',
+                            'submenu' => [
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                            ],
+                        ],
+                    ],
+                ], */
+                
             ],
-        ], */
+        ],
+        [
+            'text'    => 'Citas',
+            'icon'    => 'fas fa-fw fa-user-clock',
+            'submenu' => [
+                [
+                    'text' => 'Lista de citas',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Crear una cita',
+                    'url'  => '#',
+                ],
+                /* [
+                    'text'    => 'level_one',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'level_two',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'level_two',
+                            'url'     => '#',
+                            'submenu' => [
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                            ],
+                        ],
+                    ],
+                ], */
+                
+            ],
+        ],
+        [
+            'text'    => 'Notificaciones',
+            'icon'    => 'fas fa-fw fa-bell',
+            'submenu' => [
+                [
+                    'text' => 'Lista de notificaciones',
+                    'url'  => 'admin.usuarios.index',
+                ],
+                [
+                    'text' => 'Enviar una notificación',
+                    'url'  => 'admin.presupuestos.create',
+                ],
+                /* [
+                    'text'    => 'level_one',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'level_two',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'level_two',
+                            'url'     => '#',
+                            'submenu' => [
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                            ],
+                        ],
+                    ],
+                ], */
+                
+            ],
+        ],
+        [
+            'text'    => 'Usuarios',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text' => 'Lista de usuarios',
+                    'url'  => 'admin.usuarios.index',
+                ],
+                [
+                    'text' => 'Crear presupuesto',
+                    'url'  => 'admin.presupuestos.create',
+                ],
+                /* [
+                    'text'    => 'level_one',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'level_two',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'level_two',
+                            'url'     => '#',
+                            'submenu' => [
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                                [
+                                    'text' => 'level_three',
+                                    'url'  => '#',
+                                ],
+                            ],
+                        ],
+                    ],
+                ], */
+                
+            ],
+        ],
         /* ['header' => 'labels'],
         [
             'text'       => 'important',

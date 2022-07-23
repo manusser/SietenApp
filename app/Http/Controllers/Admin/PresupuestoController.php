@@ -15,7 +15,7 @@ class PresupuestoController extends Controller
      */
     public function index()
     {
-        $presupuestos = Presupuesto::all();
+        $presupuestos = Presupuesto::orderBy('id', 'desc')->paginate(5);
         return view('admin.presupuestos.index', compact('presupuestos'));
     }
 
@@ -60,7 +60,7 @@ class PresupuestoController extends Controller
      */
     public function show(Presupuesto $presupuesto)
     {
-        return view('admin.presupuestos.index', compact('presupuesto'));
+        return view('admin.presupuestos.show', compact('presupuesto'));
     }
 
     /**
