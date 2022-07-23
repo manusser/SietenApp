@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Presupuesto;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class PresupuestoController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class PresupuestoController extends Controller
      */
     public function index()
     {
-        //$presupuestos = Presupuesto::orderBy('id', 'desc')->paginate(5);
-        return view('admin.presupuestos.index');
+        $users = User::orderBy('id', 'desc')->paginate(5);
+        return view('admin.users.index', compact('users'));
     }
 
     /**
@@ -26,7 +26,7 @@ class PresupuestoController extends Controller
      */
     public function create()
     {
-        return view('admin.presupuestos.create');
+        return view('admin.users.create');
     }
 
     /**
@@ -40,16 +40,19 @@ class PresupuestoController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'slug' => 'required',
-            'description' => 'required',
-            'price' => 'required',
-            'user_id' => 'required'
+            'email' => 'required|email',
+            'dni' => 'required',
+            'password' => 'required'
         ]);
 
-        Presupuesto::create($request->all());
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'dni' => $request->dni,
+            'password' => bcrypt($request->password)
+        ]);
 
-        return redirect()->route('admin.presupuestos.index');
-
+        return redirect()->route('admin.users.index');
     }
 
     /**
@@ -58,9 +61,9 @@ class PresupuestoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Presupuesto $presupuesto)
+    public function show(User $user)
     {
-        return view('admin.presupuestos.show', compact('presupuesto'));
+        return view('admin.users.show', compact('user'));
     }
 
     /**
@@ -69,9 +72,9 @@ class PresupuestoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Presupuesto $presupuesto)
+    public function edit(User $user)
     {
-        return view('admin.presupuestos.edit', compact('presupuesto'));
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
@@ -81,13 +84,12 @@ class PresupuestoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Presupuesto $presupuesto)
+    public function update(Request $request, User $user)
     {
 
-        $presupuesto->update($request->all());
+        $user->update($request->all());
 
-        return redirect()->route('admin.presupuestos.index', $presupuesto);
-
+        return redirect()->route('admin.users.index', $user);
     }
 
     /**
@@ -96,10 +98,10 @@ class PresupuestoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Presupuesto $presupuesto)
+    public function destroy(User $user)
     {
-        $presupuesto->delete();
+        $user->delete();
 
-        return redirect()->route('admin.presupuestos.index');
+        return redirect()->route('admin.users.index');
     }
 }

@@ -442,11 +442,11 @@ return [
             'submenu' => [
                 [
                     'text' => 'Lista de usuarios',
-                    'url'  => 'admin.usuarios.index',
+                    'route'  => 'admin.users.index',
                 ],
                 [
                     'text' => 'Crear presupuesto',
-                    'url'  => 'admin.presupuestos.create',
+                    'route'  => 'admin.users.create',
                 ],
                 /* [
                     'text'    => 'level_one',
@@ -645,5 +645,5 @@ return [
     |
     */
 
-    'livewire' => false,
+    'livewire' => true,
 ];
