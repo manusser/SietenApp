@@ -19,7 +19,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6">
-
+                <p class="mb-4 mt-4"> <i class="fa-solid fa-angle-left"></i> <a href="{{ route('user.presupuestos.index') }}">Volver a la lista de presupuestos</a></p>
                 <div class="grid grid-cols-3">
                     <div class="col-span-2">
                         <p class="text-black">Creado: <span class="badge badge-primary">
@@ -32,14 +32,14 @@
                 </div>
 
                 <h1 class="mt-5 text-5xl font-bold text-black">{{ $presupuesto->name }}</h1>
-                <p>{{ $presupuesto->description }}</p>
+                <p class="mt-5">{{ $presupuesto->description }}</p>
             </div>
 
         </div>
 
         <div class="mt-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-6">
-                <p class="text-black">Archivos adjuntos <span class="fa fa-file fa-fw"></span></p>
+                <p class="text-black">Archivos adjuntos <i class="fas fa-file fa-fw"></i> </p>
             </div>
         </div>
 

@@ -31,7 +31,12 @@
                         Mi perfil
                     </a>
                 </li>
-                <li><a>Salir</a></li>
+
+                <form method="POST" action="{{ route('logout') }}" x-data>
+                    @csrf
+                    <li><a @click.prevent="$root.submit();">Salir</a></li>
+                </form>
+
             </ul>
         </div>
     </div>
