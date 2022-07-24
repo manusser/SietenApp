@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class PresupuestoController extends Controller
 {
     public function index(){
-        $presupuestos = Presupuesto::where('user_id', auth()->user()->id)->paginate(5);
+        $presupuestos = Presupuesto::where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->paginate(5);
 
         return view('user.presupuestos.index', compact('presupuestos'));
     }

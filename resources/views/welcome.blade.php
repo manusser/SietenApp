@@ -1,6 +1,5 @@
 <x-app-layout>
-
-    <div class="py-12">
+    <div class="py-10">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-4 lg:rounded-lg">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="hero max-h-80" style="background-image: url(https://placeimg.com/1000/800/arch);">

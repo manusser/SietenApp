@@ -22,7 +22,7 @@
 
                     </div>
 
-                    <div class="card-body">
+                    {{-- <div class="card-body">
                         <p>{{ $presupuesto->description }}</p>
                     </div>
 
@@ -36,10 +36,10 @@
                             <button class="btn btn-danger" type="submit">Eliminar</button>
                         </form>
 
-                    </div>
+                    </div> --}}
                 </div>
             </div>
-            <div class="col">
+            {{-- <div class="col">
                 <div class="card">
                     <ul class="list-group">
                         <li class="list-group-item active text-center" aria-current="true">
@@ -59,7 +59,7 @@
                         <li class="list-group-item">Ejemplo.pdf</li>
                     </ul>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 
