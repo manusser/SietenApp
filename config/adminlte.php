@@ -445,7 +445,7 @@ return [
                     'route'  => 'admin.users.index',
                 ],
                 [
-                    'text' => 'Crear presupuesto',
+                    'text' => 'Crear usuario',
                     'route'  => 'admin.users.create',
                 ],
                 /* [

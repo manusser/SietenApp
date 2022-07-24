@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\PresupuestoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +24,7 @@ Route::middleware([
     })->name('home');
 });
 
-Route::middleware([
+/* Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
@@ -31,4 +32,6 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-});
+}); */
+
+Route::resource('presupuestos', PresupuestoController::class)->names('user.presupuestos');
