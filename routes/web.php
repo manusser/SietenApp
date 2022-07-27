@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\User\FacturaController;
 use App\Http\Controllers\User\PresupuestoController;
+use App\Models\Factura;
+use App\Models\Presupuesto;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +23,11 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/', function () {
-        return view('welcome');
+
+        $presupuestos = Presupuesto::where('user_id', auth()->id())->get();
+        $facturas = Factura::where('user_id', auth()->id())->get();
+
+        return view('welcome', compact('presupuestos', 'facturas'));
     })->name('home');
 });
 
@@ -35,3 +42,4 @@ Route::middleware([
 }); */
 
 Route::resource('presupuestos', PresupuestoController::class)->names('user.presupuestos');
+Route::resource('facturas', FacturaController::class)->names('user.facturas');

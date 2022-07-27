@@ -325,11 +325,11 @@ return [
             'submenu' => [
                 [
                     'text' => 'Lista de facturas',
-                    'url'  => '#',
+                    'route'  => 'admin.facturas.index',
                 ],
                 [
                     'text' => 'Crear factura',
-                    'url'  => '#',
+                    'route'  => 'admin.facturas.create',
                 ],
                 /* [
                     'text'    => 'level_one',

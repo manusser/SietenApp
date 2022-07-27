@@ -58,7 +58,7 @@
                 <div class="card bg-c-yellow order-card">
                     <div class="card-block">
                         <h6 class="m-b-20">Facturas creadas</h6>
-                        <h2 class="text-right"><i class="fa fa-file f-left"></i><span>486</span></h2>
+                        <h2 class="text-right"><i class="fa fa-file f-left"></i><span>{{ $facturas->count() }}</span></h2>
                     </div>
                 </div>
             </div>
